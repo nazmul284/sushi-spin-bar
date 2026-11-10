@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <meta name="theme-color" content="#6b1f16">
+  <title>Sushi Spin Bar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="stage">
+    <!-- Restaurant backdrop -->
+    <div id="bg">
+      <div class="shoji"></div>
+      <div class="wall"></div>
+      <div class="floor"></div>
+      <div class="lantern l"></div>
+      <div class="lantern r"></div>
+    </div>
+
+    <!-- Customers sit behind the counter -->
+    <div id="seatLayer" class="layer"></div>
+
+    <!-- Counter + conveyor belt (built in JS) -->
+    <svg id="counterSvg" viewBox="0 0 450 800" width="450" height="800"></svg>
+
+    <!-- Chef, cutting board and plates on the belt -->
+    <div id="beltLayer" class="layer">
+      <div id="chef"></div>
+      <div id="board"></div>
+    </div>
+
+    <!-- Order bubbles -->
+    <div id="bubbleLayer" class="layer"></div>
+
+    <button id="btnBook" class="side-btn" data-icon="book" aria-label="Recipe book"></button>
+    <button id="btnSound" class="side-btn" aria-label="Toggle sound"></button>
+
+    <div id="hint"></div>
+
+    <!-- HUD -->
+    <div id="hud">
+      <div class="lvl"><small>LEVEL</small><b id="hLevel">1</b></div>
+      <div class="pill score"><i class="ic" data-icon="star"></i><b id="hScore">0</b></div>
+      <div class="pill coins" id="pCoins"><i class="ic" data-icon="coin"></i><b id="hCoins">0</b><small id="hTarget">/45</small></div>
+      <div class="pill timer" id="pTime"><i class="ic" data-icon="clock"></i><b id="hTime">1:30</b></div>
+      <div class="pill sat"><i class="ic" id="hFace"></i><div class="bar"><span id="hSat"></span></div></div>
+      <button id="btnPause" class="round" data-icon="pause" aria-label="Pause"></button>
+    </div>
+
+    <!-- Chef's preparation tray -->
+    <div id="prep">
+      <button id="btnTrash" aria-label="Trash selected plate"><i data-icon="trash"></i></button>
+      <div id="slots">
+        <div class="slot"></div><div class="slot"></div><div class="slot"></div><div class="slot"></div>
+      </div>
+      <button id="btnClear" data-icon="close" aria-label="Clear tray"></button>
+      <button id="btnMake"><span class="mk-icon"></span><span class="mk-text"><b class="mk-label">MAKE</b><small class="mk-name"></small></span></button>
+    </div>
+
+    <!-- Ingredient queues -->
+    <div id="queues"></div>
+
+    <div id="fx" class="layer"></div>
+    <div id="toast"></div>
+    <div id="overlay"></div>
+  </div>
+
+  <script src="art.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>
